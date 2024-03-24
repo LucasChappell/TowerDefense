@@ -1,12 +1,18 @@
 import pygame
+from enemies import enemies, normal, fast, strong
+from towers import towers, sniper, smg, rifle
 pygame.init()
 
 window_width = 1440
 window_height = 960
 black = (0,0,0)
 
+
+
 gameDisplay = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption("Tabletop Tower Defense")
+
+grid= []
 
 clock = pygame.time.Clock()
 
@@ -14,6 +20,7 @@ bg = pygame.image.load("images/gameBackground.jpg")
 
 def draw():
     pygame.draw.rect(gameDisplay, black, [450, 200, 1200, 10], 0)
+    pygame.draw.rect(gameDisplay, black, [450, 760, 1200, 10], 0)
 
 
 stopped = False
