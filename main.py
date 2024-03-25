@@ -9,18 +9,38 @@ black = (0,0,0)
 
 
 
+
 gameDisplay = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption("Tabletop Tower Defense")
 
+columnLen = 72
+rowLen = 48
 grid= []
+gridColumns = []
+grid_width = window_width/columnLen
+grid_height = window_height/rowLen
+for i in range(columnLen):
+    gridColumns.append([])
+for i in range(rowLen):
+    grid.append(gridColumns)
 
 clock = pygame.time.Clock()
 
 bg = pygame.image.load("images/gameBackground.jpg")
 
+
+
 def draw():
-    pygame.draw.rect(gameDisplay, black, [450, 200, 1200, 10], 0)
-    pygame.draw.rect(gameDisplay, black, [450, 760, 1200, 10], 0)
+    y = 0
+    
+    for row in range(rowLen):
+        x = 0
+        for column in range(columnLen):
+            pygame.draw.rect(gameDisplay, black, [x, y, grid_width, grid_height], 1)
+            x += grid_width
+            
+        y += grid_height
+        
 
 
 stopped = False
@@ -35,5 +55,6 @@ while not stopped:
     draw()
     pygame.display.update()
     clock.tick(60)
+    
 
     
