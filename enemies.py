@@ -1,12 +1,12 @@
 class enemies():
-    def __init__(self, health) -> None:
-        self.health = health
+    def __init__(self) -> None:
+        self.health = 50
 
-class normal():
+class normal(enemies):
     pass
 
-class fast():
+class fast(enemies):
     pass
 
-class strong():
+class strong(enemies):
     pass

@@ -1,12 +1,15 @@
 class towers():
     def __init__(self) -> None:
-        pass
+        self.damage = 10
 
-class sniper():
-    pass
+class sniper(towers):
+    def __init__(self) -> None:
+        self.damage = 25
 
-class smg():
-    pass
+class smg(towers):
+    def __init__(self) -> None:
+        self.damage = 5
 
-class rifle():
-    pass
+class rifle(towers):
+    def __init__(self) -> None:
+        self.damage = 10
